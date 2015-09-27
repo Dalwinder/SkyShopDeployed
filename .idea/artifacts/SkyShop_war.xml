@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="SkyShop:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SkyShop.war">
+      <element id="artifact" artifact-name="SkyShop:war exploded" />
+    </root>
+  </artifact>
+</component>
