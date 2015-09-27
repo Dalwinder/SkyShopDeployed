@@ -8,9 +8,9 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import com.springapp.model.Product;
+import com.springapp.model.ProductImpl;
 
-public class ProductDao implements DaoInterface<Product, String> {
+public class ProductDao implements DaoInterface<ProductImpl, String> {
 
 	private Session currentSession;
 	
@@ -63,38 +63,38 @@ public class ProductDao implements DaoInterface<Product, String> {
 		this.currentTransaction = currentTransaction;
 	}
 
-	public void persist(Product entity) {
+	public void persist(ProductImpl entity) {
 		getCurrentSession().save(entity);
 	}
 
-	public void update(Product entity) {
+	public void update(ProductImpl entity) {
 		getCurrentSession().update(entity);
 	}
 
-	public Product findById(int id) {
-		Product product = (Product) getCurrentSession().get(Product.class, id);
+	public ProductImpl findById(int id) {
+		ProductImpl product = (ProductImpl) getCurrentSession().get(ProductImpl.class, id);
 		return product; 
 	}
 
 	//TODO
-	public Product findById(String id) {
+	public ProductImpl findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void delete(Product entity) {
+	public void delete(ProductImpl entity) {
 		getCurrentSession().delete(entity);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Product> findAll() {
-		List<Product> products = (List<Product>) getCurrentSession().createQuery("from Products").list();
+	public List<ProductImpl> findAll() {
+		List<ProductImpl> products = (List<ProductImpl>) getCurrentSession().createQuery("from Products").list();
 		return products;
 	}
 
 	public void deleteAll() {
-		List<Product> entityList = findAll();
-		for (Product entity : entityList) {
+		List<ProductImpl> entityList = findAll();
+		for (ProductImpl entity : entityList) {
 			delete(entity);
 		}
 	}

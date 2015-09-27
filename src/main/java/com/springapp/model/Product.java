@@ -1,84 +1,30 @@
 package com.springapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.math.BigDecimal;
+import java.util.List;
 
-@Entity
-@Table(name = "products")
-public class Product {
+/**
+ * Created by Jo on 27/09/2015.
+ */
+public interface Product {
 
-	@Id
-	@Column(name = "id")
-	private int id;
-	
-	@Column(name = "code")
-	private String code;
-	
-	@Column(name= "name")
-	private String name;
-	
-	@Column(name= "tid")
-	private int tid;
-	
-	public Product() {
-	}
+    BigDecimal getPrice();
 
-	public Product(int id, int tid, String code, String name) {
-		this.id = id;
-		this.name = name;
-		this.code = code;
-		this.tid = tid;
-	}
-	
-	public Product(int tid, String code, String name) {
-		this.name = name;
-		this.code = code;
-		this.tid = tid;
-	}
-	
-	public int getId() {
-		return id;
-	}
+    void setPrice(BigDecimal price);
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    String getName();
 
-	public int getTid() {
-		return tid;
-	}
+    void setName(String name);
 
-	public void setTid(int tid) {
-		this.tid = tid;
-	}
+    String getDescription();
 
-	public String getCode() {
-		return code;
-	}
+    void setDescription(String description);
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    void addProductSupplier(Supplier supplier);
 
-	public String getName() {
-		return name;
-	}
+    List<Supplier> getProductSuppliers();
 
-	public void setName(String name) {
-		this.code = name;
-	}
-	
-	@Override
-	public String toString() {
-		return "Product: " 	+ this.id
-							+ ": " 
-							+ this.tid 
-							+ ", "  
-							+ this.code 
-							+ " " 
-							+ this.name;
-	}
-	
+    String getProductCode();
+
+    void setProductCode(String productCode);
 }

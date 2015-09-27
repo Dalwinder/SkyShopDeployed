@@ -1,9 +1,9 @@
 package com.springapp.service;
 
-import java.util.List;
-
 import com.springapp.dao.ProductDao;
-import com.springapp.model.Product;
+import com.springapp.model.ProductImpl;
+
+import java.util.List;
 
 public class ProductService {
 
@@ -13,35 +13,35 @@ public class ProductService {
 		productDao = new ProductDao();
 	}
 
-	public void persist(Product entity) {
+	public void persist(ProductImpl entity) {
 		productDao.openCurrentSessionwithTransaction();
 		productDao.persist(entity);
 		productDao.closeCurrentSessionwithTransaction();
 	}
 
-	public void update(Product entity) {
+	public void update(ProductImpl entity) {
 		productDao.openCurrentSessionwithTransaction();
 		productDao.update(entity);
 		productDao.closeCurrentSessionwithTransaction();
 	}
 
-	public Product findById(int id) {
+	public ProductImpl findById(int id) {
 		productDao.openCurrentSession();
-		Product product = productDao.findById(id);
+		ProductImpl product = productDao.findById(id);
 		productDao.closeCurrentSession();
 		return product;
 	}
 
 	public void delete(int id) {
 		productDao.openCurrentSessionwithTransaction();
-		Product product = productDao.findById(id);
+		ProductImpl product = productDao.findById(id);
 		productDao.delete(product);
 		productDao.closeCurrentSessionwithTransaction();
 	}
 
-	public List<Product> findAll() {
+	public List<ProductImpl> findAll() {
 		productDao.openCurrentSession();
-		List<Product> products = productDao.findAll();
+		List<ProductImpl> products = productDao.findAll();
 		productDao.closeCurrentSession();
 		return products;
 	}

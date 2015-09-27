@@ -1,13 +1,17 @@
 package com.springapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
 
-@Entity
-@Table(name = "customers")
-public class Customer {
+/**
+ * Created by Jo on 27/09/2015.
+ */
+public interface Customer {
 
-	
+    //logged in
+    //guest
+
+    //returns a list of the customers orders
+    List<Order> getOrders();
+
+    void addOrder(Order order);
 }

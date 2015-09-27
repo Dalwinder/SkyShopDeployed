@@ -1,16 +1,15 @@
 package com.springapp.dao;
 
-import java.util.List;
-
+import com.springapp.model.EmployeeImpl;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import com.springapp.model.Employee;
+import java.util.List;
 
-public class EmployeeDao implements DaoInterface<Employee, String> {
+public class EmployeeDao implements DaoInterface<EmployeeImpl, String> {
 
 	private Session currentSession;
 	
@@ -63,32 +62,32 @@ public class EmployeeDao implements DaoInterface<Employee, String> {
 		this.currentTransaction = currentTransaction;
 	}
 
-	public void persist(Employee entity) {
+	public void persist(EmployeeImpl entity) {
 		getCurrentSession().save(entity);
 	}
 
-	public void update(Employee entity) {
+	public void update(EmployeeImpl entity) {
 		getCurrentSession().update(entity);
 	}
 
-	public Employee findById(String id) {
-		Employee book = (Employee) getCurrentSession().get(Employee.class, id);
+	public EmployeeImpl findById(String id) {
+		EmployeeImpl book = (EmployeeImpl) getCurrentSession().get(EmployeeImpl.class, id);
 		return book; 
 	}
 
-	public void delete(Employee entity) {
+	public void delete(EmployeeImpl entity) {
 		getCurrentSession().delete(entity);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Employee> findAll() {
-		List<Employee> books = (List<Employee>) getCurrentSession().createQuery("from Employee").list();
+	public List<EmployeeImpl> findAll() {
+		List<EmployeeImpl> books = (List<EmployeeImpl>) getCurrentSession().createQuery("from EmployeeImpl").list();
 		return books;
 	}
 
 	public void deleteAll() {
-		List<Employee> entityList = findAll();
-		for (Employee entity : entityList) {
+		List<EmployeeImpl> entityList = findAll();
+		for (EmployeeImpl entity : entityList) {
 			delete(entity);
 		}
 	}
