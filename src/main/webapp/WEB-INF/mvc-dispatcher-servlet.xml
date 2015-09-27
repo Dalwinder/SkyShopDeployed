@@ -12,4 +12,15 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--<bean class="java.net.URI" id="dbUrl">-->
+        <!--<constructor-arg value="${postgres://sffgsoprvpqvbr:xihQCi7pFm7OLNSHjAJqejPElJ@ec2-54-217-202-109.eu-west-1.compute.amazonaws.com:5432/d608rldje8helt}"/>-->
+    <!--</bean>-->
+
+    <!--<bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">-->
+        <!--<property name="driverClassName" value="${database.driverClassName}"/>-->
+        <!--<property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>-->
+        <!--<property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>-->
+        <!--<property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>-->
+    <!--</bean>-->
+
 </beans>
