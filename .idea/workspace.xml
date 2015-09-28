@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e4a99e5-a027-48fc-b6c2-e5981f79dffc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Catalogue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Customer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/dao/CustomerDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/CustomerImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/service/CustomerService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Employee.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/dao/EmployeeDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/EmployeeImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/service/EmployeeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Location.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Order.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Product.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/ProductCatalogue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/ProductController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/ProductImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/ShoppingCart.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/Supplier.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/model/WarehouseLocation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/controller/HomePageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/controller/HomePageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkyShop.iws" />
@@ -33,15 +47,15 @@
       <file leaf-file-name="HomePageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/controller/HomePageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44717446">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3130016">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1041#1057#0" expanded="true" />
-                <element signature="e#1417#1425#0" expanded="true" />
-                <marker date="1443449499000" expanded="true" signature="1198:1247" placeholder="CREATE TABLE..IF..." />
-                <marker date="1443449499000" expanded="true" signature="1274:1306" placeholder="INSERT INTO ..." />
-                <marker date="1443449499000" expanded="true" signature="1347:1369" placeholder="SELECT tick ..ticks..." />
+                <element signature="e#1123#1139#0" expanded="true" />
+                <element signature="e#1499#1507#0" expanded="true" />
+                <marker date="1443451013000" expanded="true" signature="1280:1329" placeholder="CREATE TABLE..IF..." />
+                <marker date="1443451013000" expanded="true" signature="1356:1388" placeholder="INSERT INTO ..." />
+                <marker date="1443451013000" expanded="true" signature="1429:1451" placeholder="SELECT tick ..ticks..." />
               </folding>
             </state>
           </provider>
@@ -61,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -188,9 +202,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/controller/PostgresArrayImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/controller/HomePageController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/controller/HomePageController.java" />
       </list>
     </option>
   </component>
@@ -223,7 +237,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="797" />
+    <option name="height" value="793" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -455,6 +469,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SkyShopDeployed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SkyShopDeployed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -465,7 +509,7 @@
     <property name="recentsLimit" value="5" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-getting-started" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SkyShop" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.44942528" />
@@ -475,11 +519,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/springapp/controller" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/springapp/service" />
       <recent name="$PROJECT_DIR$/src/main/java/com/springapp/model" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/springapp/dao" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.24">
@@ -806,15 +850,15 @@
       <workItem from="1443360344763" duration="1522000" />
       <workItem from="1443362693545" duration="4803000" />
       <workItem from="1443382796917" duration="252000" />
-      <workItem from="1443434071127" duration="6453000" />
+      <workItem from="1443434071127" duration="8532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13478000" />
+    <option name="totallyTimeSpent" value="15557000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="793" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -829,7 +873,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3282967" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.026243094" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.037087914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -839,7 +883,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30833334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3282967" sideWeight="0.49444443" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.026243094" sideWeight="0.49444443" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -878,11 +922,11 @@
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1041#1057#0" expanded="true" />
-            <element signature="e#1417#1425#0" expanded="true" />
-            <marker date="1443449499000" expanded="true" signature="1198:1247" placeholder="CREATE TABLE..IF..." />
-            <marker date="1443449499000" expanded="true" signature="1274:1306" placeholder="INSERT INTO ..." />
-            <marker date="1443449499000" expanded="true" signature="1347:1369" placeholder="SELECT tick ..ticks..." />
+            <element signature="e#1123#1139#0" expanded="true" />
+            <element signature="e#1499#1507#0" expanded="true" />
+            <marker date="1443451013000" expanded="true" signature="1280:1329" placeholder="CREATE TABLE..IF..." />
+            <marker date="1443451013000" expanded="true" signature="1356:1388" placeholder="INSERT INTO ..." />
+            <marker date="1443451013000" expanded="true" signature="1429:1451" placeholder="SELECT tick ..ticks..." />
           </folding>
         </state>
       </provider>
@@ -925,11 +969,11 @@
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1041#1057#0" expanded="true" />
-            <element signature="e#1417#1425#0" expanded="true" />
-            <marker date="1443449499000" expanded="true" signature="1198:1247" placeholder="CREATE TABLE..IF..." />
-            <marker date="1443449499000" expanded="true" signature="1274:1306" placeholder="INSERT INTO ..." />
-            <marker date="1443449499000" expanded="true" signature="1347:1369" placeholder="SELECT tick ..ticks..." />
+            <element signature="e#1123#1139#0" expanded="true" />
+            <element signature="e#1499#1507#0" expanded="true" />
+            <marker date="1443451013000" expanded="true" signature="1280:1329" placeholder="CREATE TABLE..IF..." />
+            <marker date="1443451013000" expanded="true" signature="1356:1388" placeholder="INSERT INTO ..." />
+            <marker date="1443451013000" expanded="true" signature="1429:1451" placeholder="SELECT tick ..ticks..." />
           </folding>
         </state>
       </provider>
@@ -1071,22 +1115,22 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/test.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/controller/HomePageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44717446">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3130016">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1041#1057#0" expanded="true" />
-            <element signature="e#1417#1425#0" expanded="true" />
-            <marker date="1443449499000" expanded="true" signature="1198:1247" placeholder="CREATE TABLE..IF..." />
-            <marker date="1443449499000" expanded="true" signature="1274:1306" placeholder="INSERT INTO ..." />
-            <marker date="1443449499000" expanded="true" signature="1347:1369" placeholder="SELECT tick ..ticks..." />
+            <element signature="e#1123#1139#0" expanded="true" />
+            <element signature="e#1499#1507#0" expanded="true" />
+            <marker date="1443451013000" expanded="true" signature="1280:1329" placeholder="CREATE TABLE..IF..." />
+            <marker date="1443451013000" expanded="true" signature="1356:1388" placeholder="INSERT INTO ..." />
+            <marker date="1443451013000" expanded="true" signature="1429:1451" placeholder="SELECT tick ..ticks..." />
           </folding>
         </state>
       </provider>

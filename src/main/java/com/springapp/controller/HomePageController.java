@@ -34,6 +34,9 @@ public class HomePageController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome() {
 
+		port(Integer.valueOf(System.getenv("PORT")));
+		staticFileLocation("/public");
+
 		Connection connection = null;
 		Map<String, Object> attributes = new HashMap<String, Object>();
 		try {
@@ -57,8 +60,6 @@ public class HomePageController {
 		} finally {
 			if (connection != null) try{connection.close();} catch(SQLException e){}
 		}
-
-		//return "index";
 	}
 
 }
