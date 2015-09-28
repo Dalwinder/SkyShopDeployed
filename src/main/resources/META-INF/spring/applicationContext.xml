@@ -1,5 +1,4 @@
 <beans>
-
     <bean class="java.net.URI" id="dbUrl">
         <constructor-arg value="postgres://ckglmrxbblfvur:ptigXQWSs1PDo-cre2XYGAUM0_@ec2-54-243-149-147.compute-1.amazonaws.com:5432/d5cldfdev8flq8"/>
     </bean>
@@ -10,6 +9,4 @@
     <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
     <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
     </bean>
-
-
 </beans>
