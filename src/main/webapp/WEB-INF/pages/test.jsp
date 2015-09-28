@@ -8,7 +8,7 @@
 	<%--<% for(Product product: products){--%>
 		<%--out.println("<li>" + product.getName() + "</li>");--%>
 	<%--} %>--%>
-	<li>Hello Dalli.</li>
+	<li>Hello Test.</li>
 </ul>
 
 </body>
