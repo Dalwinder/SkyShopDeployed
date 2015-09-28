@@ -29,11 +29,6 @@ public class HomePageController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome() {
-
-		port(Integer.valueOf(System.getenv("PORT")));
-		staticFileLocation("/public");
-
-		//db();
 		return "index";
 	}
 
