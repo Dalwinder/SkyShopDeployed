@@ -24,18 +24,18 @@ public class CatalogueDaoImp implements CatalogueDao {
 			product.setId(id);
 
 			connection = DatabaseUrl.extract().getConnection();
-
-			Statement stmt = connection.createStatement();
-			String query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
-					+ "VALUES (" + id + ", "
-					+ product.getProductTypeId() + ", '"
-					+ product.getProductCode() + "', '"
-					+ product.getName() + "', '"
-					+ product.getDescription() + "', "
-					+ product.getPrice()  + ", '"
-					+ product.getImageUrl()  + "')";
-
-			stmt.executeQuery(query);
+//
+//			Statement stmt = connection.createStatement();
+//			String query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
+//					+ "VALUES (" + id + ", "
+//					+ product.getProductTypeId() + ", '"
+//					+ product.getProductCode() + "', '"
+//					+ product.getName() + "', '"
+//					+ product.getDescription() + "', "
+//					+ product.getPrice()  + ", '"
+//					+ product.getImageUrl()  + "')";
+//
+//			stmt.executeQuery(query);
 
 //			product = new Product(
 //					rs.getInt("id"),
@@ -48,6 +48,7 @@ public class CatalogueDaoImp implements CatalogueDao {
 //			);
 		} catch (Exception e) {
 			System.out.println("There was an error: " + e);
+			product = null;
 		} finally {
 			if (connection != null) try{connection.close();} catch(SQLException e){}
 		}
@@ -57,7 +58,7 @@ public class CatalogueDaoImp implements CatalogueDao {
 
 	public void updateProduct(Product product){
 
-		Connection connection = null;
+//		Connection connection = null;
 //		try {
 //			Statement stmt = connection.createStatement();
 //			ResultSet rs = stmt.executeQuery("DELETE FROM product WHERE ID = 1");
@@ -90,7 +91,7 @@ public class CatalogueDaoImp implements CatalogueDao {
 		}
 	}
 
-//	public List getProducts(){
+	//public List getProducts(){
 //		Statement stmt = connection.createStatement();
 //		ResultSet rs = stmt.executeQuery("SELECT * FROM Products");
 //	}
