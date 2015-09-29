@@ -53,7 +53,7 @@ public class HomePageController {
 			}
 
 			attributes.put("results", output);
-			return "test";
+			return "index";
 		} catch (Exception e) {
 			attributes.put("message", "There was an error: " + e);
 			return "error";
