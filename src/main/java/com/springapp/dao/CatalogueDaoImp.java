@@ -24,13 +24,13 @@ public class CatalogueDaoImp implements CatalogueDao {
 
 
 			Statement stmt = connection.createStatement();
-			String 	query = "INSERT INTO  product(id, tid, code, name, description, price, imageUrl)"
+			String 	query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
 							+ "VALUES (" + id + ", "
-							+ product.getProductTypeId() + ", "
-							+ product.getName() + ", "
-							+ product.getDescription() + ", "
-							+ product.getPrice()  + ", "
-							+ product.getImageUrl()  + ")";
+							+ product.getProductTypeId() + ", '"
+							+ product.getName() + "', '"
+							+ product.getDescription() + "', "
+							+ product.getPrice()  + ", '"
+							+ product.getImageUrl()  + "')";
 			stmt.executeQuery(query);
 
 //			product = new Product(
