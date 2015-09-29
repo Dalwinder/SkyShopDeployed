@@ -1,6 +1,4 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ page import="com.springapp.model.Product" %>
-<%@ page import="com.springapp.model.ProductCatalogue" %>
 <%@ page import="java.util.List" %>
 
 <!DOCTYPE html>
