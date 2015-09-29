@@ -1,40 +1,93 @@
 package com.springapp.model;
-
 import java.math.BigDecimal;
-import java.util.List;
 
-/**
- * Created by Jo on 27/09/2015.
- */
-public interface Product {
+public class Product {
 
-    BigDecimal getPrice();
+    private int id;
 
-    void setPrice(BigDecimal price);
+    private String productCode;
 
-    String getName();
+    private int productTypeId;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    private String imageUrl;
 
-    void setName(String name);
+    public Product(int id, int tid, String productCode, String name, String description, BigDecimal price, String imageUrl) {
+        this.id = id;
+        this.productTypeId = tid;
+        this.productCode = productCode;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageUrl = imageUrl;
+    }
 
-    String getDescription();
+    public Product(int tid, String productCode, String name, String description, BigDecimal price, String imageUrl) {
+        this.productTypeId = tid;
+        this.productCode = productCode;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageUrl = imageUrl;
+    }
 
-    void setDescription(String description);
+    //ID
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    void addProductSupplier(Supplier supplier);
+    //ProductTyepId
+    public int getProductTypeId() {
+        return productTypeId;
+    }
+    public void setProdictTypeId(int productTypeId) {
+        this.productTypeId = productTypeId;
+    }
 
-    List<Supplier> getProductSuppliers();
+    //ProductCode
+    public String getProductCode() {
+        return productCode;
+    }
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
 
-    String getProductCode();
+    //Price
+    public BigDecimal getPrice() {
+        return price;
+    }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
-    void setProductCode(String productCode);
+    //Name
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    void setSuppliers(List<Supplier> suppliers);
+    //Description
+    public String getDescription() {
+            return description;
+        }
+    public void setDescription(String description) {
+            this.description = description;
+        }
 
-    boolean isDiscontinued();
+    //ImageURL
+    public String getImageUrl() {
+            return imageUrl;
+        }
+    public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
 
-    int getStockLevel();
+    //TODO:TOSTRING
 
-    int adjustStockLevel(int numOfItemsBought);
-
-    int getReorderLevel();
 }

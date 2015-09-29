@@ -1,24 +1,9 @@
 package com.springapp.controller;
-
-import org.jscience.physics.amount.Amount;
-import org.jscience.physics.model.RelativisticModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-
-import java.net.URI;
-import java.net.URISyntaxException;
-
-import static javax.measure.unit.SI.KILOGRAM;
 import static spark.Spark.*;
-import spark.template.freemarker.FreeMarkerEngine;
-import spark.ModelAndView;
-import static spark.Spark.get;
-
 import com.heroku.sdk.jdbc.DatabaseUrl;
-
-import javax.measure.quantity.Mass;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
