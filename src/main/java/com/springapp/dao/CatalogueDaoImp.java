@@ -31,7 +31,7 @@ public class CatalogueDaoImp implements CatalogueDao {
 					rs.getString("imageUrl")
 			);
 		} catch (Exception e) {
-			System.out("message", "There was an error: " + e);
+			System.out.println("There was an error: " + e);
 		} finally {
 			if (connection != null) try{connection.close();} catch(SQLException e){}
 		}
