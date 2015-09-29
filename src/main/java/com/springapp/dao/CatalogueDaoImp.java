@@ -31,6 +31,9 @@ public class CatalogueDaoImp implements CatalogueDao {
 							+ product.getDescription() + "', "
 							+ product.getPrice()  + ", '"
 							+ product.getImageUrl()  + "')";
+
+			query = "INSERT INTO Products(" + id  + ", tid, code, name, description, price, imageUrl) Values" +
+					"(10, 12, 'UA502', 'Bananas', '1971-07-13', 5.99, 'test.com');";
 			stmt.executeQuery(query);
 
 //			product = new Product(
