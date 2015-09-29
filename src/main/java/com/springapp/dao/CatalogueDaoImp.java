@@ -1,5 +1,6 @@
 package com.springapp.dao;
 
+import com.heroku.sdk.jdbc.DatabaseUrl;
 import org.springframework.jdbc.support.incrementer.*;
 import com.springapp.model.Product;
 
@@ -22,6 +23,7 @@ public class CatalogueDaoImp implements CatalogueDao {
 			Integer id = productIncrementer.nextIntValue();
 			product.setId(id);
 
+			connection = DatabaseUrl.extract().getConnection();
 
 			Statement stmt = connection.createStatement();
 			String 	query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
@@ -32,8 +34,6 @@ public class CatalogueDaoImp implements CatalogueDao {
 							+ product.getPrice()  + ", '"
 							+ product.getImageUrl()  + "')";
 
-			query = "INSERT INTO Products(" + id  + ", tid, code, name, description, price, imageUrl) Values" +
-					"(11, 12, 'UA502', 'Bananas2', '1971-07-13', 5.99, 'test.com');";
 			stmt.executeQuery(query);
 
 //			product = new Product(

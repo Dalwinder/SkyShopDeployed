@@ -22,7 +22,7 @@ public class ProductController {
         Product product = catalogueDao.insertProduct(new Product(
                 12,
                 "4763",
-                "John Smith",
+                "Johnnny boy",
                 "Most common name for sale",
                 new BigDecimal(5.99),
                 "www.google.co.uk"
