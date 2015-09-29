@@ -27,7 +27,7 @@ public class CatalogueDaoImp implements CatalogueDao {
 
 			Statement stmt = connection.createStatement();
 			String query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
-					+ "VALUES (13, "
+					+ "VALUES (" + id + ", "
 					+ product.getProductTypeId() + ", '"
 					+ product.getProductCode() + "', '"
 					+ product.getName() + "', '"
