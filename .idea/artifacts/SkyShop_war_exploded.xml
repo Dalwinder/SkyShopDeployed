@@ -48,6 +48,10 @@
           <element id="library" level="project" name="Maven: com.heroku.sdk:heroku-jdbc:0.1.0" />
           <element id="library" level="project" name="Maven: org.jscience:jscience:4.3.1" />
           <element id="library" level="project" name="Maven: org.javolution:javolution:5.2.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.6.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.6.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.6.1" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.8.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
