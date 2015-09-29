@@ -55,6 +55,7 @@ public class HomePageController {
 			String query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
 					+ "VALUES (13, "
 					+ product.getProductTypeId() + ", '"
+					+ product.getProductCode() + "', '"
 					+ product.getName() + "', '"
 					+ product.getDescription() + "', "
 					+ product.getPrice()  + ", '"
