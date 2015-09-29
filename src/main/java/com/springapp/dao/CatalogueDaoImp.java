@@ -19,17 +19,29 @@ public class CatalogueDaoImp implements CatalogueDao {
 	public Product insertProduct(Product product){
 		Connection connection = null;
 		try {
+			Integer id = productIncrementer.nextIntValue();
+			product.setId(id);
+
+
 			Statement stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery("DELETE FROM product WHERE ID = 1");
-			product = new Product(
-					rs.getInt("id"),
-					rs.getInt("tid"),
-					rs.getString("code"),
-					rs.getString("name"),
-					rs.getString("description"),
-					rs.getBigDecimal("price"),
-					rs.getString("imageUrl")
-			);
+			String 	query = "INSERT INTO  product(id, tid, code, name, description, price, imageUrl)"
+							+ "VALUES (" + id + ", "
+							+ product.getProductTypeId() + ", "
+							+ product.getName() + ", "
+							+ product.getDescription() + ", "
+							+ product.getPrice()  + ", "
+							+ product.getImageUrl()  + ")";
+			stmt.executeQuery(query);
+
+//			product = new Product(
+//					rs.getInt("id"),
+//					rs.getInt("tid"),
+//					rs.getString("code"),
+//					rs.getString("name"),
+//					rs.getString("description"),
+//					rs.getBigDecimal("price"),
+//					rs.getString("imageUrl")
+//			);
 		} catch (Exception e) {
 			System.out.println("There was an error: " + e);
 		} finally {
