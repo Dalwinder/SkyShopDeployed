@@ -40,29 +40,6 @@ public class HomePageController {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 		try {
 			connection = DatabaseUrl.extract().getConnection();
-			Statement stmt = connection.createStatement();
-
-			CatalogueDao catalogueDao = new CatalogueDaoImp();
-			Product product = catalogueDao.insertProduct(new Product(
-					12,
-					"4763",
-					"Johnnny boy",
-					"Most common name for sale",
-					new BigDecimal(5.99),
-					"www.google.co.uk"
-			));
-
-			String query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
-					+ "VALUES (13, "
-					+ product.getProductTypeId() + ", '"
-					+ product.getProductCode() + "', '"
-					+ product.getName() + "', '"
-					+ product.getDescription() + "', "
-					+ product.getPrice()  + ", '"
-					+ product.getImageUrl()  + "')";
-
-			stmt.executeQuery(query);
-
 			return "index";
 		} catch (Exception e) {
 			attributes.put("message", "There was an error: " + e);
