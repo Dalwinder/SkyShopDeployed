@@ -25,8 +25,8 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 	public Product insertProduct(Product product){
 		Connection connection = null;
 		try {
-			Integer id = productIncrementer.nextIntValue();
-			product.setId(id);
+			//Integer id = productIncrementer.nextIntValue();
+			//product.setId(id);
 			connection = DatabaseUrl.extract().getConnection();
 
 			Statement stmt = connection.createStatement();
