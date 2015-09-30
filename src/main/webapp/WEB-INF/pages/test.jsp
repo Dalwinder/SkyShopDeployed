@@ -1,15 +1,16 @@
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
+<head>
+  <title>Spring MVC Form Handling</title>
+</head>
 <body>
 
-<%--<%! public List<Product> products = ProductCatalogue.getCatalogue().getProducts(); %>--%>
-
-<ul>
-	<%--<% for(Product product: products){--%>
-		<%--out.println("<li>" + product.getName() + "</li>");--%>
-	<%--} %>--%>
-	<li>Hello Test.</li>
-</ul>
-
+<h2>Submitted Student Information</h2>
+<table>
+  <tr>
+    <td>Name</td>
+    <td>${firstName}</td>
+  </tr>
+</table>
 </body>
 </html>

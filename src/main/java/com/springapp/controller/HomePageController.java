@@ -44,7 +44,6 @@ public class HomePageController {
 		} catch (Exception e) {
 			attributes.put("message", "There was an error: " + e);
 			return "error";
-		} 
+		}
 	}
-
 }
