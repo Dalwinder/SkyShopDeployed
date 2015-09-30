@@ -21,9 +21,8 @@ public class ProductCatalogueController {
 		ProductCatalogue.getProductCatalogue().removeAllProducts();
 		ProductCatalogue.getProductCatalogue().addListOfProducts(list);
 
-		ModelAndView model = new ModelAndView();
+		ModelAndView model = new ModelAndView("show_all");
 		model.addObject("show_all", ProductCatalogue.getProductCatalogue());
 		return model;
 	}
-
 }
