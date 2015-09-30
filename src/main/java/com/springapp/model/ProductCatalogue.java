@@ -1,22 +1,21 @@
 package com.springapp.model;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Jo on 27/09/2015.
  */
-public class Catalogue {
+public class ProductCatalogue {
 
-    private static Catalogue catalogue = new Catalogue();
+    private static ProductCatalogue catalogue = new ProductCatalogue();
     private List<Product> products;
 
-    private Catalogue(){
+    private ProductCatalogue(){
         products = new ArrayList<Product>();
     }
 
-    public static Catalogue getCatalogue(){
+    public static ProductCatalogue getProductCatalogue(){
         return catalogue;
     }
 

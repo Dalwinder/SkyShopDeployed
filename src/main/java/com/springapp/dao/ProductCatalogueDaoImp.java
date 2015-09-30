@@ -1,7 +1,6 @@
 package com.springapp.dao;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
-import com.springapp.model.Catalogue;
 import com.springapp.model.Product;
 
 import java.sql.ResultSet;
@@ -9,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 
@@ -85,7 +83,6 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 			Statement stmt = connection.createStatement();
 			String query = "SELECT * FROM Products";
 			ResultSet rs = stmt.executeQuery(query);
-
 
 			if(rs.next()){
 				Product product = new Product(
