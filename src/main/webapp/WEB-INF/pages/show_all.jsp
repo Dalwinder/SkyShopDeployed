@@ -9,7 +9,7 @@
     <div class="col m10 offset-m1 s12">
         <h3 class="header blue-grey-text">View Products</h3>
         <hr>
-        <c:forEach var="product" items="${catalogue}">
+        <c:forEach var="product" items="${products}">
             <div class="row">
                 <div class="col m4 l3">
                     <div class="card small">

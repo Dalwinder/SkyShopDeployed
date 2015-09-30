@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ProductCatalogueController {
@@ -17,12 +18,12 @@ public class ProductCatalogueController {
 	@RequestMapping(path = "/catalogue", method = RequestMethod.GET)
 	public ModelAndView printCatalogue() {
 		ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
-		ArrayList<Product> list = productCatalogueDao.getAllProducts();
-		ProductCatalogue.getProductCatalogue().removeAllProducts();
+		List<Product> list = productCatalogueDao.getAllProducts();
+		//ProductCatalogue.getProductCatalogue().removeAllProducts();
 		ProductCatalogue.getProductCatalogue().addListOfProducts(list);
 
 		ModelAndView model = new ModelAndView("show_all");
-		model.addObject("show_all", ProductCatalogue.getProductCatalogue());
+		model.addObject("products", ProductCatalogue.getProductCatalogue().getProducts());
 		return model;
 	}
 }
