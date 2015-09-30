@@ -19,9 +19,8 @@ public class ProductCatalogueController {
 	public ModelAndView printCatalogue() {
 		ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
 		List<Product> list = productCatalogueDao.getAllProducts();
-		ProductCatalogue.getProductCatalogue().removeAllProducts();
 		ProductCatalogue.getProductCatalogue().addListOfProducts(list);
-
+		ProductCatalogue.getProductCatalogue().removeAllProducts();
 		ModelAndView model = new ModelAndView("show_all");
 		model.addObject("products", ProductCatalogue.getProductCatalogue().getProducts());
 		return model;
