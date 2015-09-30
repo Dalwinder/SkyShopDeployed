@@ -15,7 +15,7 @@
   <form:form class="col m12"  method="POST" action="/customer/new" commandName="command">
     <table>
       <tr>
-        <td><form:label path="firstName">Name</form:label></td>
+        <td><form:label path="firstNameLabel">Name</form:label></td>
         <td><form:input path="firstName" /></td>
       </tr>
       <tr>

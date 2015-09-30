@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/catalogue")
 public class ProductCatalogueController {
 
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path = "/catalogue", method = RequestMethod.GET)
 	public String printCatalogue() {
 		return "productCatalogue";
 	}
