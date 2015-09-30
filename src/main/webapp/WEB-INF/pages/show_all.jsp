@@ -20,7 +20,7 @@
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">${product.name}<i class="material-icons right">more_vert</i></span>
                             <p><a href="/product?Id=" + ${product.id}>View Product</a></p>
-                            <p>$(product.shortDescription}</p>
+                            <p>${product.shortDescription}</p>
                         </div>
 
                         <div class="card-reveal">
