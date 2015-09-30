@@ -31,27 +31,6 @@ public class HomePageController {
 			connection = DatabaseUrl.extract().getConnection();
 			return "index";
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger("MyLog");
-			FileHandler fh;
-
-			try {
-
-				// This block configure the logger with handler and formatter
-				fh = new FileHandler("/Users/dba32/Documents/BootCamp Files/MyLogFile2.log");
-				logger.addHandler(fh);
-				SimpleFormatter formatter = new SimpleFormatter();
-				fh.setFormatter(formatter);
-
-				// the following statement is used to log any messages
-				logger.info("There was an error: " + e);
-
-			} catch (SecurityException e1) {
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-
-			logger.info("Hi How r u?");
 
 			return "error";
 		}

@@ -15,20 +15,11 @@ import java.math.BigDecimal;
 public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView printSingleProduct() {
-        ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
-        Product product = productCatalogueDao.insertProduct(new Product(
-                12,
-                "4763",
-                "Johnnny boy",
-                "Most common name for sale",
-                new BigDecimal(5.99),
-                "www.google.co.uk"
-        ));
-
-        ModelAndView model = new ModelAndView("product");
-        model.addObject("product", product);
-        return model;
+    public String printSingleProduct() {
+  //      ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
+    //    ModelAndView model = new ModelAndView("product");
+      //  model.addObject("product", product);
+        return "index";
     }
 
 }
