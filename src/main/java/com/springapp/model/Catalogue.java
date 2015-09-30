@@ -32,9 +32,9 @@ public class Catalogue {
         products.remove(product);
     }
 
-    public void addListOfProducts(ArrayList<Product> products){
-        for (int i = 0; i < products.size(); i++){
-            products.add(products.get(i));
+    public void addListOfProducts(ArrayList<Product> productList){
+        for (int i = 0; i < productList.size(); i++){
+            products.add(productList.get(i));
         }
     }
 
