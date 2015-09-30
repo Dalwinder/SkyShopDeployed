@@ -5,10 +5,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import static spark.Spark.*;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 
 @Controller
@@ -27,7 +31,28 @@ public class HomePageController {
 			connection = DatabaseUrl.extract().getConnection();
 			return "index";
 		} catch (Exception e) {
-			attributes.put("message", "There was an error: " + e);
+			Logger logger = Logger.getLogger("MyLog");
+			FileHandler fh;
+
+			try {
+
+				// This block configure the logger with handler and formatter
+				fh = new FileHandler("/Users/dba32/Documents/BootCamp Files/MyLogFile2.log");
+				logger.addHandler(fh);
+				SimpleFormatter formatter = new SimpleFormatter();
+				fh.setFormatter(formatter);
+
+				// the following statement is used to log any messages
+				logger.info("There was an error: " + e);
+
+			} catch (SecurityException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			logger.info("Hi How r u?");
+
 			return "error";
 		}
 		finally {
