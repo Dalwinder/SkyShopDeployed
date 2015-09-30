@@ -17,10 +17,12 @@ public class ProductCatalogueController {
 
 	@RequestMapping(path = "/catalogue", method = RequestMethod.GET)
 	public ModelAndView printCatalogue() {
+		ProductCatalogue.getProductCatalogue().removeAllProducts();
+
 		ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
 		List<Product> list = productCatalogueDao.getAllProducts();
 		ProductCatalogue.getProductCatalogue().addListOfProducts(list);
-		ProductCatalogue.getProductCatalogue().removeAllProducts();
+
 		ModelAndView model = new ModelAndView("show_all");
 		model.addObject("products", ProductCatalogue.getProductCatalogue().getProducts());
 		return model;

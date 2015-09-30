@@ -32,12 +32,12 @@ public class ProductCatalogue {
     }
 
     public void addListOfProducts(List<Product> productList){
-//        for (int i = 0; i < productList.size(); i++){
-//            products.add(productList.get(i));
-//        }
-        for(Product product: productList){
-            products.add(product);
+        for (int i = 0; i < productList.size(); i++){
+            products.add(productList.get(i));
         }
+//        for(Product product: productList){
+//            products.add(product);
+//        }
     }
 
     public void removeAllProducts(){
