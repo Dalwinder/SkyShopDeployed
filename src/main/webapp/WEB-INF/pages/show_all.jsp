@@ -14,7 +14,7 @@
                 <div class="col m4 l3">
                     <div class="card small">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src=$(product.imageUrl}>
+                            <img class="activator" src=${product.imageUrl}>
                         </div>
 
                         <div class="card-content">
