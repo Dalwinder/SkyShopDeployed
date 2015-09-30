@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.springapp.model.Product;
 
-public interface CatalogueDao {
+public interface ProductCatalogueDao {
 	public abstract Product insertProduct(Product product);
 	public abstract void updateProduct(Product product);
 	public abstract void deleteProduct(Product product);

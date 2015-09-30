@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Connection;
 
-public class CatalogueDaoImp implements CatalogueDao {
+public class ProductProductCatalogueDaoImp implements ProductCatalogueDao {
 
 	private DataFieldMaxValueIncrementer productIncrementer;
 
