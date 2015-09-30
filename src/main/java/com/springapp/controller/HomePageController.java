@@ -6,6 +6,7 @@ import static spark.Spark.*;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +29,11 @@ public class HomePageController {
 		} catch (Exception e) {
 			attributes.put("message", "There was an error: " + e);
 			return "error";
+		}
+		finally {
+			if (connection != null){
+				try{connection.close();} catch(SQLException e){}
+			}
 		}
 	}
 }
