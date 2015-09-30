@@ -30,7 +30,7 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 			connection = DatabaseUrl.extract().getConnection();
 
 			Statement stmt = connection.createStatement();
-			String query = "DELETE FROM Product WHERE ID = 10";
+			String query = "DELETE FROM Products WHERE ID = 13";
 
 //			String query = "INSERT INTO Products (id, tid, code, name, description, price, imageUrl)"
 //					+ "VALUES (" + id + ", "
