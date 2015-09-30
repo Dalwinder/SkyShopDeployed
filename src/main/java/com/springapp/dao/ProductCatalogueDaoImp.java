@@ -4,12 +4,16 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 import org.springframework.jdbc.support.incrementer.*;
 import com.springapp.model.Product;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Connection;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
-public class ProductProductCatalogueDaoImp implements ProductCatalogueDao {
+public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 
 	private DataFieldMaxValueIncrementer productIncrementer;
 
@@ -36,20 +40,31 @@ public class ProductProductCatalogueDaoImp implements ProductCatalogueDao {
 					+ product.getImageUrl()  + "')";
 
 			stmt.executeQuery(query);
-
-//			product = new Product(
-//					rs.getInt("id"),
-//					rs.getInt("tid"),
-//					rs.getString("code"),
-//					rs.getString("name"),
-//					rs.getString("description"),
-//					rs.getBigDecimal("price"),
-//					rs.getString("imageUrl")
-			//);
 		} catch (Exception e) {
-			System.out.println("There was an error: " + e);
+			Logger logger = Logger.getLogger("MyLog");
+			FileHandler fh;
+
+			try {
+
+				// This block configure the logger with handler and formatter
+				fh = new FileHandler("/Users/dba32/Documents/BootCamp Files/MyLogFile.log");
+				logger.addHandler(fh);
+				SimpleFormatter formatter = new SimpleFormatter();
+				fh.setFormatter(formatter);
+
+				// the following statement is used to log any messages
+				logger.info("There was an error: " + e);
+
+			} catch (SecurityException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+
+			logger.info("Hi How r u?");
 			product = null;
-		} finally {
+		}
+		finally {
 			if (connection != null) try{connection.close();} catch(SQLException e){}
 		}
 

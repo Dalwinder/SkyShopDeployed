@@ -9,7 +9,9 @@
     <img class="materialboxed" src="<spring:url value="/resources/img/box.jpg" />">
     <div class="section"></div>
     <div class="center">
-      <button class="btn-floating btn-large waves-effect waves-light red modal-trigger" onclick="$('#modal1').openModal();"><i class="material-icons">shopping_basket</i></button>
+      <button class="btn-floating btn-large waves-effect waves-light red modal-trigger" onclick="$('#modal1').openModal();">
+        <i class="material-icons">shopping_basket</i>
+      </button>
 
       <!-- Modal Structure -->
       <div id="modal1" class="modal">

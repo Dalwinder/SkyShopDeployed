@@ -1,6 +1,6 @@
 package com.springapp.controller;
 
-import com.springapp.dao.ProductProductCatalogueDaoImp;
+import com.springapp.dao.ProductCatalogueDaoImp;
 import com.springapp.model.Product;
 import com.springapp.dao.ProductCatalogueDao;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView printSingleProduct() {
-        ProductCatalogueDao productCatalogueDao = new ProductProductCatalogueDaoImp();
+        ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
         Product product = productCatalogueDao.insertProduct(new Product(
                 12,
                 "4763",
