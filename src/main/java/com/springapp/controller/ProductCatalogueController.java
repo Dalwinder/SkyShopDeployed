@@ -26,9 +26,4 @@ public class ProductCatalogueController {
 		return model;
 	}
 
-
-	@RequestMapping(path = "/show_all", method = RequestMethod.GET)
-	public String printAllProducts() {
-		return "show_all";
-	}
 }
