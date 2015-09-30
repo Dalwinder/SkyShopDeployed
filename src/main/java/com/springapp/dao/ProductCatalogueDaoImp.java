@@ -84,7 +84,7 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 			String query = "SELECT * FROM Products";
 			ResultSet rs = stmt.executeQuery(query);
 
-			if(rs.next()){
+			while(rs.next()){
 				Product product = new Product(
 						rs.getInt("id"),
 						rs.getInt("tid"),
