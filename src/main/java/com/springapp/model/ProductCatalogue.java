@@ -15,7 +15,7 @@ public class ProductCatalogue {
         products = new ArrayList<Product>();
     }
 
-    public static ProductCatalogue getProductCatalogue(){
+    public static ProductCatalogue getCatalogue(){
         return catalogue;
     }
 

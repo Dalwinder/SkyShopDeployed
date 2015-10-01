@@ -1,54 +1,39 @@
 package com.springapp.model;
 
-public class Order {
+import org.joda.time.DateTime;
 
-    private String addressLine1, addressLine2, addressLine3, postcode;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 
+/**
+ * Created by Jo on 27/09/2015.
+ */
+public interface Order {
 
-    public Order(String addressLine1, String addressLine2, String addressLine3, String postcode) {
-        this.addressLine1 = addressLine1;
-        this.addressLine2 = addressLine2;
-        this.addressLine3 = addressLine3;
-        this.postcode = postcode;
-    }
+    //****customer order and purchase order*****
 
-    public Order(String addressLine1, String addressLine2, String postcode) {
-        this.addressLine1 = addressLine1;
-        this.addressLine2 = addressLine2;
-        this.addressLine3 = "";
-        this.postcode = postcode;
-    }
+    void orderProducts(List<Product> productsToOrder, Integer quantity);
 
-    //Addressline1
-    public String getAddressLine1() {
-        return addressLine1;
-    }
-    public void setAddressLine1(String addressLine1) {
-        this.addressLine1 = addressLine1;
-    }
+    //return a map of products & quantities on this order
+    Map<Product, Integer> getProductsOrdered();
 
-    //Addressline2
-    public String getAddressLine2() {
-        return addressLine2;
-    }
-    public void setAddressLine2(String addressLine1) {
-        this.addressLine2 = addressLine2;
-    }
+    BigDecimal getTotalPrice();
 
-    //Addressline3
-    public String getAddressLine3() {
-        return addressLine3;
-    }
-    public void setAddressLine3(String addressLine3) {
-        this.addressLine3 = addressLine3;
-    }
+    //returns the customer who placed the order
+    Customer getCustomer();
 
-    //Postcode
-    public String getPostCode() {
-        return postcode;
-    }
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
+    DateTime getDateOrderPlaced();
+
+    void setProductDispatched(Product product, Integer quantity);
+
+    //check products already dispatched from this order and the date they were dispatched and the quantity dispatched
+    Map<Product, Map<DateTime, Integer>> getDispatchedProducts();
+
+    void productDelivered(Product product, Integer quantity);
+
+    //check products already delivered from this order, the date they were delivered and the quantity delivered
+    Map<Product, Map<DateTime, Integer>> getDeliveredProducts();
+
 
 }

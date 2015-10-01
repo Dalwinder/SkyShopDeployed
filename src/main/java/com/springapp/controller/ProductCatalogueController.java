@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -17,14 +16,14 @@ public class ProductCatalogueController {
 
 	@RequestMapping(path = "/catalogue", method = RequestMethod.GET)
 	public ModelAndView printCatalogue() {
-		ProductCatalogue.getProductCatalogue().removeAllProducts();
+		ProductCatalogue.getCatalogue().removeAllProducts();
 
 		ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
 		List<Product> list = productCatalogueDao.getAllProducts();
-		ProductCatalogue.getProductCatalogue().addListOfProducts(list);
+		ProductCatalogue.getCatalogue().addListOfProducts(list);
 
 		ModelAndView model = new ModelAndView("show_all");
-		model.addObject("products", ProductCatalogue.getProductCatalogue().getProducts());
+		model.addObject("products", ProductCatalogue.getCatalogue().getProducts());
 		return model;
 	}
 }
