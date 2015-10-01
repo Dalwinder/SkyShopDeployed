@@ -21,7 +21,7 @@ public class ProductController {
         int id;
 
         try{
-            id = Integer.parseInt(request.getParameter("id"));
+            id = Integer.parseInt(request.getParameter("Id"));
         }catch (NumberFormatException e){
             System.out.print("error");
             id = 0;
