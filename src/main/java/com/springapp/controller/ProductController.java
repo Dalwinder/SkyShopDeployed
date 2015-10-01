@@ -36,5 +36,4 @@ public class ProductController {
         model.addObject("product", product);
         return model;
     }
-
 }

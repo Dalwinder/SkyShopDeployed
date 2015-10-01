@@ -13,19 +13,19 @@ import java.util.List;
 
 @Controller
 public class ProductCatalogueController {
-
-	@RequestMapping(path = "/catalogue", method = RequestMethod.GET)
-	public ModelAndView printCatalogue() {
-		ProductCatalogue.getCatalogue().removeAllProducts();
-
-		ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
-		List<Product> list = productCatalogueDao.getAllProducts();
-		ProductCatalogue.getCatalogue().addListOfProducts(list);
-
-		ModelAndView model = new ModelAndView("show_all");
-		model.addObject("products", ProductCatalogue.getCatalogue().getProducts());
-		return model;
-	}
+//
+//	@RequestMapping(path = "/catalogue", method = RequestMethod.GET)
+//	public ModelAndView printCatalogue() {
+//		ProductCatalogue.getCatalogue().removeAllProducts();
+//
+//		ProductCatalogueDao productCatalogueDao = new ProductCatalogueDaoImp();
+//		List<Product> list = productCatalogueDao.getAllProducts();
+//		ProductCatalogue.getCatalogue().addListOfProducts(list);
+//
+//		ModelAndView model = new ModelAndView("show_all");
+//		model.addObject("products", ProductCatalogue.getCatalogue().getProducts());
+//		return model;
+//	}
 	@RequestMapping(path = "/show_all", method = RequestMethod.GET)
 	public ModelAndView printAllCatalogue() {
 		ProductCatalogue.getCatalogue().removeAllProducts();

@@ -173,29 +173,30 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 			Statement stmt = connection.createStatement();
 			String query = "SELECT * FROM Products WHERE id = " + productId;
 			ResultSet rs = stmt.executeQuery(query);
-			ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
+			//ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
 
 			SuppliersDaoImp suppliersDaoImp = new SuppliersDaoImp();
 
+			List<Supplier> suppliersList = new ArrayList<Supplier>();
 			//only going to return one
 			if(rs.next()){
-				String suppliersStr = rs.getString("suppliersStr");
-				int length = Arrays.asList(suppliersStr.split(",")).size();
-				List<String> supplierArray = Arrays.asList(suppliersStr.split(","));
-				int supplierId;
-
-				for(int i= 0; i < length; i++){
-					try{
-						String supplierIntStr = supplierArray.get(i);
-						supplierId = Integer.parseInt(supplierIntStr);
-
-					}catch(NumberFormatException nfe){
-						supplierId = 0;
-						System.out.println("error");
-					}
-					suppliersDaoImp.getSupplierbyId(supplierId);
-					suppliers.add(suppliersDaoImp.getSupplierbyId(supplierId));
-				}
+//				String suppliersStr = rs.getString("suppliersStr");
+//				int length = Arrays.asList(suppliersStr.split(",")).size();
+//				List<String> supplierArray = Arrays.asList(suppliersStr.split(","));
+//				int supplierId;
+//
+//				for(int i= 0; i < length; i++){
+//					try{
+//						String supplierIntStr = supplierArray.get(i);
+//						supplierId = Integer.parseInt(supplierIntStr);
+//
+//					}catch(NumberFormatException nfe){
+//						supplierId = 0;
+//						System.out.println("error");
+//					}
+//					suppliersDaoImp.getSupplierbyId(supplierId);
+//					suppliers.add(suppliersDaoImp.getSupplierbyId(supplierId));
+//				}
 
 				product = new ProductImpl(
 						rs.getInt("id"),
@@ -206,7 +207,7 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 						rs.getBigDecimal("price"),
 						rs.getString("imageurl"),
 						rs.getInt("reOrderLevel"),
-						suppliers,
+						suppliersList,
 						rs.getString("shelfLocation"),
 						rs.getString("rowLocation"),
 						rs.getInt("stockLevel"),
