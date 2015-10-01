@@ -36,11 +36,6 @@ public class HomePageController {
 		return "account";
 	}
 
-	@RequestMapping(path = "/show_all", method = RequestMethod.GET)
-	public String printAllProducts() {
-		return "show_all";
-	}
-
 	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
 	public String printConfirmation() {
 		return "confirmation";
