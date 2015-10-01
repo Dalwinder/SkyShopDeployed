@@ -7,7 +7,4 @@ public interface Supplier {
         //contact details
 
         Address getAddress();
-
-    public abstract int getSupplierId();
-
-}
+    }
