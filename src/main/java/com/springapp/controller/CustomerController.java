@@ -1,6 +1,7 @@
 package com.springapp.controller;
 
 import com.springapp.model.Customer;
+import com.springapp.model.CustomerImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ public class CustomerController {
 	//http://www.tutorialspoint.com/spring/spring_mvc_form_handling_example.htm
 	@RequestMapping(value = "/newCustomer", method = RequestMethod.GET)
 	public ModelAndView login() {
-		return new ModelAndView("newCustomer", "command", new Customer());
+		return new ModelAndView("newCustomer", "command", new CustomerImpl());
 	}
 
 	//The action of the form : action="/HelloWeb/addStudent">

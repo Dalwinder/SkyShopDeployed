@@ -3,7 +3,7 @@ package com.springapp.dao;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import com.springapp.model.Address;
 import com.springapp.model.Supplier;
-import com.springapp.model.SupplierImpl;
+import com.springapp.model.ProductSupplier;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,7 +23,7 @@ public class SuppliersDaoImp implements SuppliersDao {
             String query = "SELECT * FROM suppliers WHERE id = " + supplierId;
             ResultSet rs = stmt.executeQuery(query);
             if(rs.next()){
-                supplier = new SupplierImpl(
+                supplier = new ProductSupplier(
                         rs.getInt("id"),
                         rs.getString("name"),
                         new Address(
@@ -63,7 +63,7 @@ public class SuppliersDaoImp implements SuppliersDao {
 
             while(rs.next()){
 
-                Supplier supplier = new SupplierImpl(
+                Supplier supplier = new ProductSupplier(
                         rs.getInt("id"),
                         rs.getString("name"),
                         new Address(
@@ -88,7 +88,7 @@ public class SuppliersDaoImp implements SuppliersDao {
     }
 
     @Override
-    public Supplier createSupplier(SupplierImpl supplier) {
+    public Supplier createSupplier(ProductSupplier supplier) {
         Connection connection = null;
         try {
             connection = DatabaseUrl.extract().getConnection();
@@ -113,7 +113,7 @@ public class SuppliersDaoImp implements SuppliersDao {
         return supplier;
     }
 
-    public void deleteSupplier(SupplierImpl supplier) {
+    public void deleteSupplier(ProductSupplier supplier) {
         Connection connection = null;
         try {
             connection = DatabaseUrl.extract().getConnection();
@@ -128,7 +128,7 @@ public class SuppliersDaoImp implements SuppliersDao {
         }
     }
 
-    public Supplier cancelSupplier(SupplierImpl supplier) {
+    public Supplier cancelSupplier(ProductSupplier supplier) {
         cancelSupplier(supplier.getSupplierId());
         return supplier;
     }
@@ -149,7 +149,7 @@ public class SuppliersDaoImp implements SuppliersDao {
         return true;
     }
 
-    public Supplier updateSupplier(SupplierImpl supplier) {
+    public Supplier updateSupplier(ProductSupplier supplier) {
         Connection connection = null;
         try {
             connection = DatabaseUrl.extract().getConnection();

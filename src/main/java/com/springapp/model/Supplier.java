@@ -4,7 +4,9 @@ package com.springapp.model;
  * Created by Jo on 27/09/2015.
  */
 public interface Supplier {
-        //contact details
+    //contact details
 
-        Address getAddress();
-    }
+    Address getAddress();
+
+    public abstract int getSupplierId();
+}
