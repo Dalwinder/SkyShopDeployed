@@ -26,4 +26,11 @@ public class ProductCatalogueController {
 		model.addObject("products", ProductCatalogue.getCatalogue().getProducts());
 		return model;
 	}
+
+	@RequestMapping(path = "/get/products", method = RequestMethod.GET)
+	public ModelAndView getProducts() {
+		ModelAndView model = new ModelAndView("index");
+		model.addObject("products", ProductCatalogue.getCatalogue().getProducts());
+		return model;
+	}
 }

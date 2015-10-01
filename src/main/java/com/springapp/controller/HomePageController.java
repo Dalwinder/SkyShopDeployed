@@ -1,5 +1,7 @@
 package com.springapp.controller;
+import com.springapp.model.CustomerOrder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import static spark.Spark.*;
@@ -20,24 +22,38 @@ import java.util.logging.SimpleFormatter;
 public class HomePageController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String printWelcome() {
+	public String printHomePage() {
+		return "index";
+	}
 
-		port(Integer.valueOf(System.getenv("PORT")));
-		staticFileLocation("/public");
+	@RequestMapping(path = "/login", method = RequestMethod.GET)
+	public String printLoginPage() {
+		return "login";
+	}
 
-		Connection connection = null;
-		Map<String, Object> attributes = new HashMap<String, Object>();
-		try {
-			connection = DatabaseUrl.extract().getConnection();
-			return "index";
-		} catch (Exception e) {
+	@RequestMapping(path = "/account", method = RequestMethod.GET)
+	public String printAccountPage() {
+		return "account";
+	}
 
-			return "error";
-		}
-		finally {
-			if (connection != null){
-				try{connection.close();} catch(SQLException e){}
-			}
-		}
+	@RequestMapping(path = "/product", method = RequestMethod.GET)
+	public String printProduct() {
+		return "product";
+	}
+
+	@RequestMapping(path = "/show_all", method = RequestMethod.GET)
+	public String printAllProducts() {
+		return "show_all";
+	}
+
+	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
+	public String printConfirmation() {
+		return "confirmation";
+	}
+
+	@RequestMapping(path = "/basket", method = RequestMethod.GET)
+	public String printBasket(Model model) {
+		model.addAttribute("order", new CustomerOrder());
+		return "basket";
 	}
 }
