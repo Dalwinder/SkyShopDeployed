@@ -120,23 +120,24 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 			SuppliersDaoImp suppliersDaoImp = new SuppliersDaoImp();
 
 			while(rs.next()){
-				String suppliersStr = rs.getString("suppliersStr");
-				int length = Arrays.asList(suppliersStr.split(",")).size();
-				List<String> supplierArray = Arrays.asList(suppliersStr.split(","));
-				int supplierId;
-
-				for(int i= 0; i < length; i++){
-					try{
-						String supplierIntStr = supplierArray.get(i);
-						supplierId = Integer.parseInt(supplierIntStr);
-
-					}catch(NumberFormatException nfe){
-						supplierId = 0;
-						System.out.println("error");
-					}
-					suppliersDaoImp.getSupplierbyId(supplierId);
-					suppliers.add(suppliersDaoImp.getSupplierbyId(supplierId));
-				}
+//				String suppliersStr = rs.getString("suppliersStr");
+//				int length = Arrays.asList(suppliersStr.split(",")).size();
+//				List<String> supplierArray = Arrays.asList(suppliersStr.split(","));
+//				int supplierId;
+//
+//				for(int i= 0; i < length; i++){
+//					try{
+//						String supplierIntStr = supplierArray.get(i);
+//						supplierId = Integer.parseInt(supplierIntStr);
+//
+//					}catch(NumberFormatException nfe){
+//						supplierId = 0;
+//						System.out.println("error");
+//					}
+//					suppliersDaoImp.getSupplierbyId(supplierId);
+//					suppliers.add(suppliersDaoImp.getSupplierbyId(supplierId));
+//				}
+				List<Supplier> suppliersList = new ArrayList<Supplier>();
 
 				Product product = new ProductImpl(
 						rs.getInt("id"),
@@ -147,7 +148,7 @@ public class ProductCatalogueDaoImp implements ProductCatalogueDao {
 						rs.getBigDecimal("price"),
 						rs.getString("imageurl"),
 						rs.getInt("reOrderLevel"),
-						suppliers,
+						suppliersList,
 						rs.getString("shelfLocation"),
 						rs.getString("rowLocation"),
 						rs.getInt("stockLevel"),
