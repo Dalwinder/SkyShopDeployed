@@ -1,9 +1,9 @@
 package com.springapp.dao;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.springapp.model.Product;
 import com.springapp.model.ProductImpl;
+
+import java.util.ArrayList;
 
 public interface ProductCatalogueDao {
 	public abstract Product insertProduct(ProductImpl product);

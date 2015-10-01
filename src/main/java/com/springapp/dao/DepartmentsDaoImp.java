@@ -1,18 +1,13 @@
 package com.springapp.dao;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
-import com.springapp.model.Address;
-import com.springapp.model.Customer;
-import com.springapp.model.CustomerImpl;
 import com.springapp.model.Department;
-import sun.security.util.Password;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DepartmentsDaoImp implements DepartmentsDao {
 

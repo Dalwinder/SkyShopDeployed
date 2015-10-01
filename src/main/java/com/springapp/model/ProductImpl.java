@@ -1,5 +1,6 @@
 package com.springapp.model;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductImpl implements Product {
@@ -12,15 +13,14 @@ public class ProductImpl implements Product {
 	private String longDescription;
 	private BigDecimal price;
 	private String imageUrl;
-	private String rowLocation;
-	private String shelfLocation;
-	private int reOrderLevel; // Type?
-	private int stockLevel;
-	private boolean discontinued;
+	private int reorderLevel;
+	private List<Supplier> suppliers = new ArrayList<Supplier>();
+	private String shelfLocation = null;
+	private String rowLocation = null;
+	private int stockLevel = -100;
+	private boolean discontinued = false;
 
-
-
-	public ProductImpl(int id, String productCode, String name, String shortDescription, String longDescription, BigDecimal price, String imageUrl, String rowLocation, String shelfLocation, int reOrderLevel, int stockLevel, boolean discontinued) {
+	public ProductImpl(int id, String productCode, String name, String shortDescription, String longDescription, BigDecimal price, String imageUrl, int reorderLevel, List<Supplier> suppliers, String shelfLocation, String rowLocation, int stockLevel, boolean discontinued) {
 		this.id = id;
 		this.productCode = productCode;
 		this.name = name;
@@ -28,9 +28,10 @@ public class ProductImpl implements Product {
 		this.longDescription = longDescription;
 		this.price = price;
 		this.imageUrl = imageUrl;
-		this.rowLocation = rowLocation;
+		this.reorderLevel = reorderLevel;
+		this.suppliers = suppliers;
 		this.shelfLocation = shelfLocation;
-		this.reOrderLevel = reOrderLevel;
+		this.rowLocation = rowLocation;
 		this.stockLevel = stockLevel;
 		this.discontinued = discontinued;
 	}
@@ -44,101 +45,167 @@ public class ProductImpl implements Product {
 		this.imageUrl = imageUrl;
 		this.rowLocation = rowLocation;
 		this.shelfLocation = shelfLocation;
-		this.reOrderLevel = reOrderLevel;
+		this.reorderLevel = reorderLevel;
 		this.stockLevel = stockLevel;
 		this.discontinued = discontinued;
 	}
 
-	//ID
-	public int getId(){ return id; }
-	public void setId(int id) { this.id = id; }
-
-	//ProductCode
-	public String getProductCode() { return productCode; }
-	public void setProductCode(String productCode) { this.productCode = productCode; }
-
 	@Override
-	public void setSuppliers(List<Supplier> suppliers) {
-
+	public String getShortDescription() {
+		return shortDescription;
 	}
 
 	@Override
-	public boolean isDiscontinued() {
-		return false;
-	}
-
-	//Name
-	public String getName() { return name; }
-	public void setName(String name) { this.name = name; }
-
-	@Override
-	public String getDescription() {
-		return null;
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 
 	@Override
-	public void setDescription(String description) {
+	public String getLongDescription() {
+		return longDescription;
+	}
 
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
 	}
 
 	@Override
-	public void addProductSupplier(Supplier supplier) {
+	public BigDecimal getPrice() {
+		return price;
+	}
 
+	@Override
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public void addProductSupplier(Supplier supplier){
+		suppliers.add(supplier);
 	}
 
 	@Override
 	public List<Supplier> getProductSuppliers() {
-		return null;
+		return suppliers;
 	}
 
-	// shortDescription
-	public String getShortDescription() { return shortDescription; }
-	public void setShortDescription(String shortDescription) { this.shortDescription = shortDescription; }
-
-	// longDescription
-	public String getLongDescription() { return longDescription; }
-	public void setLongDescription(String longDescription) { this.longDescription = longDescription; }
-
-	//Price
-	public BigDecimal getPrice() { return price; }
-	public void setPrice(BigDecimal price) { this.price = price; }
-
-	//ImageURL
-	public String getImageUrl() { return imageUrl; }
-	public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
-
-
-	// rowLocation
-	public String getRowLocation() {return rowLocation; }
-	public void setRowLocation(String rowLocation) { this.rowLocation = rowLocation; }
-
-	// shelfLocation
-	public String getShelfLocation() { return shelfLocation; }
-	public void setShelfLocation(String shelfLocation) { this.shelfLocation = shelfLocation; }
-
-	// reOrderLevel
-	public int getReOrderLevel() { return reOrderLevel; }
-	public void setReOrderLevel(int reOrderLevel) {this.reOrderLevel = reOrderLevel; }
-
-	// stockLevel
-	public int getStockLevel() { return stockLevel; }
+	@Override
+	public String getProductCode() {
+		return productCode;
+	}
 
 	@Override
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+
+	public int getStockLevel() {
+		return stockLevel;
+	}
+
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
+	}
+
 	public int adjustStockLevel(int numOfItemsBought) {
-		return 0;
+		this.stockLevel -= numOfItemsBought;
+		return stockLevel;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public List<Supplier> getSuppliers() {
+		return suppliers;
+	}
+
+	public void setSuppliers(List<Supplier> suppliers) {
+		this.suppliers = suppliers;
+	}
+
+	public boolean isDiscontinued() {
+		return discontinued;
+	}
+
+	public void setDiscontinued(boolean discontinued) {
+		this.discontinued = discontinued;
 	}
 
 	@Override
-	public int getReorderLevel() {
-		return 0;
+	public String toString() {
+		return "ProductId: " + id
+				+ ", name "
+				+ name
+				+ ", imageUrl "
+				+ imageUrl
+				+ ", shelf "
+				+ shelfLocation
+				+ ", row "
+				+ rowLocation;
 	}
 
-	public void setStockLevel(int stockLevel) {this.stockLevel = stockLevel; }
+	public int getReorderLevel() {
+		return reorderLevel;
+	}
 
-	// discontinued
-	public boolean getDiscontinued() { return discontinued; }
-	public void setDiscontinued(boolean discontinued) {this.discontinued = discontinued; }
+	public void setReorderLevel(int reorderLevel) {
+		this.reorderLevel = reorderLevel;
+	}
 
-	//TODO:TOSTRING
 
+	public String getShelfLocation() {
+		return shelfLocation;
+	}
+
+	public void setShelfLocation(String shelfLocation) {
+		this.shelfLocation = shelfLocation;
+	}
+
+	public String getRowLocation() {
+		return rowLocation;
+	}
+
+	public void setRowLocation(String rowLocation) {
+		this.rowLocation = rowLocation;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	

@@ -1,6 +1,5 @@
 package com.springapp.dao;
 
-import com.springapp.model.Product;
 import com.springapp.model.Supplier;
 import com.springapp.model.SupplierImpl;
 

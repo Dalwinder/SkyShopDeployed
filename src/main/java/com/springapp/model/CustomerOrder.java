@@ -7,6 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Created by Jo on 28/09/2015.
+ */
+
 public class CustomerOrder implements Order {
     private static long orderNumberCounter = 0;
     private final long orderNumber = setOrderNumber();
@@ -16,6 +20,15 @@ public class CustomerOrder implements Order {
     private Map<Product, Map<DateTime, Integer>> productsDelivered;
     private BigDecimal totalPrice;
     private Customer customer;
+
+    public CustomerOrder(){
+        this.dateOrderPlaced  = new DateTime();
+        this.productsOrdered = null;
+        this.productsDispatched = new HashMap<Product, Map<DateTime, Integer>>();
+        this.productsDelivered = new HashMap<Product, Map<DateTime, Integer>>();
+        this.totalPrice = new BigDecimal(0.00);
+        this.customer = null;
+    }
 
     public CustomerOrder(Map<Product, Integer> productsOrdered, BigDecimal totalPrice, Customer customer) {
         this.dateOrderPlaced  = new DateTime();
@@ -41,15 +54,6 @@ public class CustomerOrder implements Order {
         return orderNumberCounter;
     }
 
-//    private BigDecimal getTotalPrice(Map<Product, Integer> productsOrdered){
-//        BigDecimal totalPrice = BigDecimal.ZERO;
-//        for(Map.Entry<Product, Integer> entry : productsOrdered.entrySet()){
-//            int quantity = entry.getValue();
-//            totalPrice.add(entry.getKey().getPrice().multiply(new BigDecimal(quantity)));
-//        }
-//        return totalPrice;
-//    }
-
     @Override
     public void orderProducts(List<Product> productsToOrder, Integer quantity) {
         int productStockLevel;
@@ -63,7 +67,7 @@ public class CustomerOrder implements Order {
     //reorders a product if below reorder level and not discontinued
     public void reorderProduct(Product product, int productStockLevel){
         if(productStockLevel < product.getReorderLevel() && !product.isDiscontinued()){
-            new WarehouseOrder(product);
+            new ProductOrder(product);
         }else if(productStockLevel == 0 && product.isDiscontinued()){
             ProductCatalogue.getCatalogue().removeProduct(product);
         }
@@ -92,9 +96,11 @@ public class CustomerOrder implements Order {
 
     @Override
     public void setProductDispatched(Product product, Integer quantity) {
-        Map<DateTime, Integer> dateQuantity = new HashMap<DateTime, Integer>();
-        dateQuantity.put(new DateTime(), quantity);
-        productsDispatched.put(product, dateQuantity);
+        if (quantity != 0) {
+            Map<DateTime, Integer> dateQuantity = new HashMap<DateTime, Integer>();
+            dateQuantity.put(new DateTime(), quantity);
+            productsDispatched.put(product, dateQuantity);
+        }
     }
 
     @Override

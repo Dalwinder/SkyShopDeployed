@@ -1,5 +1,4 @@
 package com.springapp.model;
-import java.math.BigDecimal;
 
 public class Department {
 

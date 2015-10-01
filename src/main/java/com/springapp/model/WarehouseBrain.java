@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class WarehouseBrain {
     private static WarehouseBrain warehouseBrain = new WarehouseBrain();
-    List<WarehouseOrder> warehouseOrders = new ArrayList<WarehouseOrder>();
+    List<ProductOrder> productOrders = new ArrayList<ProductOrder>();
     List<CustomerOrder> customerOrders = new ArrayList<CustomerOrder>();
 
     private WarehouseBrain(){
@@ -19,26 +19,26 @@ public class WarehouseBrain {
         return warehouseBrain;
     }
 
-    public List<WarehouseOrder> getWarehouseOrders() {
-        return warehouseOrders;
+    public List<ProductOrder> getProductOrders() {
+        return productOrders;
     }
 
     public List<CustomerOrder> getCustomerOrders() {
         return customerOrders;
     }
 
-    public List<CustomerOrder> getAndRemoveCustomerOrders(int numOfOrders){
-        //*****NEED TO MAKE SURE THERE ARE 6 ORDERS******
-        List<CustomerOrder> listToReturn = customerOrders.subList(0, 6);
-        for(int i = 0; i < numOfOrders; i++){
-            customerOrders.remove(i);
+    public CustomerOrder getNextCustomerOrder(){
+        CustomerOrder order = null;
+        if(customerOrders != null && !customerOrders.isEmpty()){
+            order = customerOrders.get(0);
+            customerOrders.remove(0);
         }
-        return listToReturn;
+        return order;
     }
 
     //adds a product order to the list
-    public void addProductOrder(WarehouseOrder warehouseOrder){
-        warehouseOrders.add(warehouseOrder);
+    public void addProductOrder(ProductOrder productOrder){
+        productOrders.add(productOrder);
     }
 
     //adds a customer order to the list

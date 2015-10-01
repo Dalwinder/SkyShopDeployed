@@ -1,7 +1,7 @@
 package com.springapp.dao;
 
-import com.springapp.model.Customer;
 import com.springapp.model.CustomerOrder;
+
 import java.util.ArrayList;
 
 public interface CustomersOrdersDao {

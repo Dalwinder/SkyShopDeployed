@@ -4,7 +4,6 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 import com.springapp.model.Customer;
 import com.springapp.model.CustomerOrder;
 import com.springapp.model.Product;
-import com.springapp.model.ProductImpl;
 import org.joda.time.DateTime;
 
 import java.sql.Connection;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CustomersOrdersDaoImp implements CustomersOrdersDao{
+public class CustomersOrdersDaoImp implements CustomersOrdersDao {
 
 	@Override
 	public CustomerOrder getOrderByOrderId(int id) {
@@ -26,6 +25,7 @@ public class CustomersOrdersDaoImp implements CustomersOrdersDao{
 	public void cancelOrder(CustomerOrder customerOrder) {
 
 	}
+
 
 	@Override
 	public ArrayList<CustomerOrder> getOrdersByCustomerId(int customerId) {
@@ -38,8 +38,11 @@ public class CustomersOrdersDaoImp implements CustomersOrdersDao{
 			String query = "SELECT * FROM CustomerOrders WHERE customerId = " + customerId;
 			ResultSet rs = stmt.executeQuery(query);
 
+			//while the customer has orders
 			while(rs.next()){
 				Statement newStmt = connection.createStatement();
+
+				//get the specific order details
 				String innerQuery = "SELECT * FROM CustomerOrdersDetails WHERE orderId = " + rs.getInt("id");
 				ResultSet innerQueryrs = stmt.executeQuery(innerQuery);
 				CustomerOrder customerOrder = null;
@@ -47,30 +50,40 @@ public class CustomersOrdersDaoImp implements CustomersOrdersDao{
 				while(innerQueryrs.next()){
 					HashMap productsDelivered = new HashMap<Product, Map<DateTime, Integer>>();
 					HashMap productsDispatched = new HashMap<Product, Map<DateTime, Integer>>();
-					Map productsOrdered = new Map<Product, Integer>();
-					Customer customer = new Customerimpl(); //new construtor arguement
+					HashMap productsOrdered = new HashMap<DateTime, Integer>();
+
+					//get the order date
+					DateTime orderedPlaceDate = new DateTime(innerQueryrs.getTimestamp("orderDate"));
+
+					//get the customer
+					CustomersDaoImp customerDao = new CustomersDaoImp();
+					Customer customer = customerDao.getCustomerById(rs.getInt("customerId"));
+
+					//get the product
 					int productId = rs.getInt("productId");
 					ProductCatalogueDaoImp prodCatDao = new ProductCatalogueDaoImp();
 					Product product = prodCatDao.getProductById(productId);
 
 					//if the products are delivered then add into productsDelivered
 					if(innerQueryrs.getBoolean("isDelivered")){
-						Map<DateTime, Integer> deliveredDate = new Map<DateTime, Integer>();
-						deliveredDate.put(innerQueryrs.getDate("deliveredDate"), innerQueryrs.getInt("quantity"));
-						productsDispatched.put(product, deliveredDate);
+						Map<DateTime, Integer> deliveredDateMap = new HashMap<DateTime, Integer>();
+						DateTime deliveredDate = new DateTime(innerQueryrs.getTimestamp("deliveredDate"));
+						deliveredDateMap.put(deliveredDate, innerQueryrs.getInt("quantity"));
+						productsDispatched.put(product, deliveredDateMap);
 					}
 
 					//if the products are dispatched then add into productsDispatched
 					if(innerQueryrs.getBoolean("isDispatched")){
-						Map<DateTime, Integer> dispatchedDate = new Map<DateTime, Integer>();
-						dispatchedDate.put(innerQueryrs.getDate("dateDispatched"), innerQueryrs.getInt("quantity"));
-						productsDispatched.put(product, dispatchedDate);
+						Map<DateTime, Integer> dispatchedDateMap = new HashMap<DateTime, Integer>();
+						DateTime dispatchedDate = new DateTime(innerQueryrs.getTimestamp("deliveredDate"));
+						dispatchedDateMap.put(dispatchedDate, innerQueryrs.getInt("quantity"));
+						productsDispatched.put(product, dispatchedDateMap);
 					}
 
 					productsOrdered.put(product, rs.getInt("quantityOrdered"));
 
 					customerOrder = new CustomerOrder(
-							rs.getDate("dateOrdered"),//CONVERT TO DATETIME
+							orderedPlaceDate,
 							productsOrdered,
 							productsDispatched,
 							productsDelivered,

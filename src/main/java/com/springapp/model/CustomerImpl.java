@@ -13,6 +13,10 @@ public class CustomerImpl implements Customer {
     private Password password;
     private boolean emailNotification, smsNotification, emailSpecialOffers, smsSpecialOffers, postSpecialOffers;
 
+    public CustomerImpl(){
+
+    }
+
     public CustomerImpl(int customerId, String title, String forename, String surname, Address address, String mobileNumber, String landlineNumber, String email, String login, Password password, boolean emailNotification, boolean smsNotification, boolean emailSpecialOffers, boolean smsSpecialOffers, boolean postSpecialOffers) {
         this.customerId = customerId;
         this.title = title;

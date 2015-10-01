@@ -1,6 +1,6 @@
 package com.springapp.model;
 
-public class SupplierImpl implements Supplier{
+public class SupplierImpl implements Supplier {
 
     private int supplierId;
     private String name;

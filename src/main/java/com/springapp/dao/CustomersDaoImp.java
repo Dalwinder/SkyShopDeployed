@@ -1,7 +1,9 @@
 package com.springapp.dao;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
-import com.springapp.model.*;
+import com.springapp.model.Address;
+import com.springapp.model.Customer;
+import com.springapp.model.CustomerImpl;
 import sun.security.util.Password;
 
 import java.sql.Connection;
@@ -31,6 +33,7 @@ public class CustomersDaoImp implements CustomersDao {
 				//Password password = rs.getString("password");
 				Password password =new Password();
 			//	password = rs.getString("password");
+
 				customer = new CustomerImpl(
 						rs.getInt("id"),
 						rs.getString("title"),

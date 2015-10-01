@@ -1,7 +1,9 @@
 package com.springapp.dao;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
-import com.springapp.model.*;
+import com.springapp.model.Address;
+import com.springapp.model.Supplier;
+import com.springapp.model.SupplierImpl;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

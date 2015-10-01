@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Jo on 27/09/2015.
  */
-public class ProductCatalogue {
+public class ProductCatalogue implements Catalogue {
 
     private static ProductCatalogue catalogue = new ProductCatalogue();
     private List<Product> products;
@@ -43,4 +43,5 @@ public class ProductCatalogue {
     public void removeAllProducts(){
         products.clear();
     }
+
 }

@@ -2,9 +2,6 @@ package com.springapp.dao;
 
 import com.springapp.model.Customer;
 import com.springapp.model.CustomerImpl;
-import com.springapp.model.Department;
-
-import java.util.List;
 
 public interface CustomersDao {
 	public abstract Customer getCustomerById(int customerId);
