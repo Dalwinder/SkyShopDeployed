@@ -16,7 +16,7 @@
         <div class="modal-content">
           <div class="row">
             <div class="col s6">
-              <h4 id="prodName" class="teal-text">Purchase Item Name</h4>
+              <h4 id="prodName" class="teal-text">${product.id}</h4>
             </div>
             <div class="col s6">
               <h4 id="prodValue" class="teal-text">&pound;4.99</h4>

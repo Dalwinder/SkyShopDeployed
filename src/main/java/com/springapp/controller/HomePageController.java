@@ -36,11 +36,6 @@ public class HomePageController {
 		return "account";
 	}
 
-	@RequestMapping(path = "/product", method = RequestMethod.GET)
-	public String printProduct() {
-		return "product";
-	}
-
 	@RequestMapping(path = "/show_all", method = RequestMethod.GET)
 	public String printAllProducts() {
 		return "show_all";
