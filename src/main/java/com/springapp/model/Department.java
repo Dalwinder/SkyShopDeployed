@@ -22,6 +22,12 @@ public class Department {
         this.numberOfEmployees  = 0;
     }
 
+    public Department(int departmentId, String departmentName, int numberOfEmployees) {
+        this.departmentId = departmentId;
+        this.departmentName = departmentName;
+        this.numberOfEmployees  = 0;
+    }
+
     //ID
     public int getDepartmentID() {
         return departmentId;

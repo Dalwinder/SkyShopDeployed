@@ -1,12 +1,12 @@
 package com.springapp.model;
 import java.math.BigDecimal;
+import java.util.List;
 
-public class ProductImpl {
+public class ProductImpl implements Product {
 
 	private int id;
 
 	private String productCode;
-	private int productTypeId;
 	private String name;
 	private String shortDescription;
 	private String longDescription;
@@ -20,9 +20,8 @@ public class ProductImpl {
 
 
 
-	public ProductImpl(int id, int tid, String productCode, String name, String shortDescription, String longDescription, BigDecimal price, String imageUrl, String rowLocation, String shelfLocation, int reOrderLevel, int stockLevel, boolean discontinued) {
+	public ProductImpl(int id, String productCode, String name, String shortDescription, String longDescription, BigDecimal price, String imageUrl, String rowLocation, String shelfLocation, int reOrderLevel, int stockLevel, boolean discontinued) {
 		this.id = id;
-		this.productTypeId = tid;
 		this.productCode = productCode;
 		this.name = name;
 		this.shortDescription = shortDescription;
@@ -36,8 +35,7 @@ public class ProductImpl {
 		this.discontinued = discontinued;
 	}
 
-	public ProductImpl(int tid, String productCode, String name, String shortDescription, String longDescription, BigDecimal price, String imageUrl, String rowLocation, String shelfLocation, int reOrderLevel, int stockLevel, boolean discontinued) {
-		this.productTypeId = tid;
+	public ProductImpl(String productCode, String name, String shortDescription, String longDescription, BigDecimal price, String imageUrl, String rowLocation, String shelfLocation, int reOrderLevel, int stockLevel, boolean discontinued) {
 		this.productCode = productCode;
 		this.name = name;
 		this.shortDescription = shortDescription;
@@ -55,17 +53,43 @@ public class ProductImpl {
 	public int getId(){ return id; }
 	public void setId(int id) { this.id = id; }
 
-	//ProductTyepId
-	public int getProductTypeId() { return productTypeId; }
-	public void setProdictTypeId(int productTypeId) { this.productTypeId = productTypeId; }
-
 	//ProductCode
 	public String getProductCode() { return productCode; }
 	public void setProductCode(String productCode) { this.productCode = productCode; }
 
+	@Override
+	public void setSuppliers(List<Supplier> suppliers) {
+
+	}
+
+	@Override
+	public boolean isDiscontinued() {
+		return false;
+	}
+
 	//Name
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
+
+	@Override
+	public String getDescription() {
+		return null;
+	}
+
+	@Override
+	public void setDescription(String description) {
+
+	}
+
+	@Override
+	public void addProductSupplier(Supplier supplier) {
+
+	}
+
+	@Override
+	public List<Supplier> getProductSuppliers() {
+		return null;
+	}
 
 	// shortDescription
 	public String getShortDescription() { return shortDescription; }
@@ -89,7 +113,7 @@ public class ProductImpl {
 	public void setRowLocation(String rowLocation) { this.rowLocation = rowLocation; }
 
 	// shelfLocation
-	public String getshelfLocation() { return shelfLocation; }
+	public String getShelfLocation() { return shelfLocation; }
 	public void setShelfLocation(String shelfLocation) { this.shelfLocation = shelfLocation; }
 
 	// reOrderLevel
@@ -98,6 +122,17 @@ public class ProductImpl {
 
 	// stockLevel
 	public int getStockLevel() { return stockLevel; }
+
+	@Override
+	public int adjustStockLevel(int numOfItemsBought) {
+		return 0;
+	}
+
+	@Override
+	public int getReorderLevel() {
+		return 0;
+	}
+
 	public void setStockLevel(int stockLevel) {this.stockLevel = stockLevel; }
 
 	// discontinued

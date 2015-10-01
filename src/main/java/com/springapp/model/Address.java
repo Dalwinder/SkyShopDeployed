@@ -2,20 +2,22 @@ package com.springapp.model;
 
 public class Address {
 
-    private String addressLine1, addressLine2, addressLine3, postcode;
+    private String addressLine1, addressLine2, addressLine3, city, postcode;
 
 
-    public Address(String addressLine1, String addressLine2, String addressLine3, String postcode) {
+    public Address(String addressLine1, String addressLine2, String addressLine3, String postcode, String city) {
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.addressLine3 = addressLine3;
+        this.city = city;
         this.postcode = postcode;
     }
 
-    public Address(String addressLine1, String addressLine2, String postcode) {
+    public Address(String addressLine1, String addressLine2, String postcode, String city) {
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.addressLine3 = "";
+        this.city = city;
         this.postcode = postcode;
     }
 
@@ -44,11 +46,18 @@ public class Address {
     }
 
     //Postcode
-    public String getPostCode() {
+    public String getPostcode() {
         return postcode;
     }
     public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
 
+    //City
+    public String getCity() {
+        return city;
+    }
+    public void setCity(String city) {
+        this.city = city;
+    }
 }
